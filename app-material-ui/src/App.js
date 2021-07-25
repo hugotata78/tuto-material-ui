@@ -1,10 +1,15 @@
-
-
+import { ThemeProvider} from '@material-ui/core/styles'
+import { Button } from '@material-ui/core'
+import theme from './ThemeConfig'
+import NavBar from './components/NavBar'
+import MenuList from './components/List'
+import HiddenList from './components/HiddenList'
 function App() {
+  
   return (
-    <div className="App">
-      <h1>Material UI</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      
+    </ThemeProvider>
   );
 }
 
