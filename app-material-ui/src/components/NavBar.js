@@ -9,39 +9,48 @@ import {
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 
+const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
-  offset: theme.mixins.toolbar,
   menuButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   title: {
     flexGrow: 1,
   },
+  appBar: {
+    [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+      color:'#140D0D',
+      
+    },
+  },
 }));
 
-const NavBar = () => {
+const NavBar = (props) => {
   const classes = useStyles();
   return (
-    <div>
-      <AppBar>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            area-label="menu"
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Hola Mundo
-          </Typography>
-          <Button variant="text" color="inherit">
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <div className={classes.offset}></div>
-    </div>
+    <AppBar className={classes.appBar}>
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          area-label="menu"
+          className={classes.menuButton}
+          onClick={()=>props.deploy()}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h5" className={classes.title}>
+          AppMaterial
+        </Typography>
+        <Button variant="h6">
+          Login
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 

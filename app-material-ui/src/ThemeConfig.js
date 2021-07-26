@@ -4,7 +4,7 @@ import purple from '@material-ui/core/colors/purple';
 const theme = createTheme({
     palette:{
         primary:{
-            main:purple[300]
+            main:'#A71F1E'
         }
     }
 })
