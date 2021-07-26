@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Hidden, makeStyles } from "@material-ui/core";
 import NavBar from "./NavBar";
 import DraWer from "./DraWer";
+import BoxUi from './BoxUi'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +38,7 @@ const ContainerApp = () => {
       </Hidden>
       <div className={classes.content}>
         <div className={classes.toolbar}></div>
-        contenido de la pagina
+        <BoxUi/>
       </div>
     </div>
   );
